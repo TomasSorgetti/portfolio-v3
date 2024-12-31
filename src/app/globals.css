@@ -27,7 +27,9 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 }
-
+.bg-gradient {
+  background: linear-gradient(to right, var(--pink), var(--cian));
+}
 .border-gradient {
   position: relative;
   border: none;

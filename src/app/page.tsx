@@ -3,7 +3,7 @@ import Contact from "@/layouts/home/Contact";
 import Cta from "@/layouts/home/Cta";
 import HomeBanner from "@/layouts/home/HomeBanner";
 import Skills from "@/layouts/home/Skills";
-import ProjectSlider from "@/components/sliders/projectSlider/ProjectSlider";
+import ProjectSlider from "@/components/sliders/ProjectSlider";
 import { projectList } from "@/data/projects";
 
 export default function Home() {

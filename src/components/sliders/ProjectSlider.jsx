@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import styles from "./ProjectSlider.module.css";
-import Arrow from "../arrow/Arrow";
+import Arrow from "./arrow/Arrow";
 
 export default function ProjectSlider({ list }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -114,34 +113,43 @@ export default function ProjectSlider({ list }) {
       onTouchStart={handleDragStart}
       onTouchMove={handleDragMove}
       onTouchEnd={handleDragEnd}
-      className={styles.projectSlider}
+      className="w-full max-w-[1440px] mx-auto overflow-hidden cursor-grab relative select-none"
     >
-      <ul className={styles.sliderCont} ref={slideShow}>
+      <ul
+        className="flex flex-nowrap w-full transition-all touch-pan-y"
+        ref={slideShow}
+      >
         {list.map((item, index) => (
           <li
             id={item.id}
             key={item.title}
-            className={`${styles.slide} ${
-              index === activeIndex ? styles.active : ""
-            }`}
+            className="min-w-full relative flex justify-between items-center px-[10rem] py-[8rem] z-10"
           >
             <Image
-              className={styles.decoration}
+              className={`absolute top-[4rem] left-[16rem] z-[-1] transition-all duration-1000 ease-in-out ${
+                index === activeIndex ? "transform -translate-x-60" : ""
+              }`}
               src={item.decoration}
               alt={item.title}
               width={950}
               height={263}
             />
-            <div className={styles.textCont}>
-              <h3>
+
+            <div className="flex flex-col items-start gap-4">
+              <h3 className="flex flex-col items-start uppercase text-[3.625rem] font-bold">
                 {item.title}
-                <span>{item.titleSpan}</span>
+                <span className="text-gradient">{item.titleSpan}</span>
               </h3>
-              <p>{item.description}</p>
+              <p className="block max-w-[420px] mb-4 text-gray">
+                {item.description}
+              </p>
               <a href={item.href}>{item.cta}</a>
             </div>
+
             <Image
-              className={styles.image}
+              className={`transition-all duration-1000 ease-in-out ${
+                index === activeIndex ? "transform scale-125" : ""
+              }`}
               src={item.image}
               alt={item.title}
               width={540.8}
@@ -151,13 +159,19 @@ export default function ProjectSlider({ list }) {
         ))}
       </ul>
 
-      <div className={styles.arrows}>
+      <div className="absolute top-0 left-0 w-full h-full flex justify-between items-center py-8 z-10">
         <Arrow direction="left" handleClick={handlePrevious} />
         <Arrow direction="right" handleClick={handleNext} />
       </div>
-      <div className={styles.dots}>
+
+      <div className="flex justify-center items-center gap-2">
         {list.map((item, index) => (
-          <span key={item.title} className={`${styles.dot}`}>
+          <span
+            key={item.title}
+            className={`block w-[10px] h-[10px] rounded-full bg-gray cursor-pointer transition-all ${
+              index === activeIndex ? "bg-gradient w-4 h-4" : ""
+            }`}
+          >
             {/* Dot */}
           </span>
         ))}
