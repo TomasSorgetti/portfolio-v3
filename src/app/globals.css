@@ -3,19 +3,51 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #171717;
+  --text: #ffffff;
+  --pink: #e020f1;
+  --cian: #30c2e2;
+  --gray: #959595;
+  --black: #111111;
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text);
   background: var(--background);
+  background-image: url("/images/pattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--pink), var(--cian));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.border-gradient {
+  position: relative;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  border-radius: 1000px;
+}
+.border-gradient::after {
+  content: "";
+  position: absolute;
+  height: calc(100% + 4px);
+  width: calc(100% + 4px);
+  border-radius: 1000px;
+  background: linear-gradient(to right, var(--pink), var(--cian));
+  z-index: -1;
+}
+.border-gradient.primary {
+  background: linear-gradient(to right, var(--pink), var(--cian));
+  color: var(--text);
+}
+.border-gradient.primary::after {
+  background: transparent;
 }
