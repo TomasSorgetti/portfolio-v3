@@ -24,7 +24,12 @@ export default function Cta() {
           your goals.
         </p>
         <div className="flex gap-4 justify-center">
-          <MainButton href="">View GitHub</MainButton>
+          <a
+            className="uppercase border border-white py-4 px-8 rounded-full"
+            href=""
+          >
+            View GitHub
+          </a>
           <MainButton variant="primary" href="#contact">
             Get in Touch
           </MainButton>

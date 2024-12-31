@@ -14,7 +14,7 @@ export default function HomeBanner() {
             #glitch design lab
           </a>
         </span>
-        <h1 className="text-[48px] font-bold leading-[56px]">
+        <h1 className="text-[52px] font-bold leading-[58px] mt-2">
           WEB DESIGNER &
           <br />
           <span className="text-gradient">FULL STACK WEB</span>
