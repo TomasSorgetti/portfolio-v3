@@ -7,19 +7,19 @@ export default function Navbar() {
         <a className="uppercase font-bold text-gradient" href="#">
           Tomás Sorgetti
         </a>
-        <ul className="flex gap-6">
+        <ul className="gap-6 hidden lg:flex">
           <li className="flex items-center">
-            <a className="uppercase" href="#">
+            <a className="uppercase" href="#projects">
               Projects
             </a>
           </li>
           <li className="flex items-center">
-            <a className="uppercase" href="#">
+            <a className="uppercase" href="#about">
               About me
             </a>
           </li>
           <li className="flex items-center">
-            <a className="uppercase" href="#">
+            <a className="uppercase" href="#skills">
               Skills
             </a>
           </li>

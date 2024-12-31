@@ -11,6 +11,7 @@ export default {
       colors: {
         gray: "var(--gray)",
         black: "var(--black)",
+        pink: "var(--pink)",
       },
     },
   },
