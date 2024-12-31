@@ -8,18 +8,21 @@ import Arrow from "../arrow/Arrow";
 export default function ProjectSlider({ list }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const slideShow = useRef(null);
 
   const handleDragStart = (e) => {
-    e.preventDefault();
     setIsDragging(true);
     setStartX(e.pageX || e.touches[0].pageX);
   };
   const handleDragMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging || isAnimating) return;
+
     const currentX = e.pageX || e.touches[0].pageX;
     const translate = currentX - startX;
+
     if (translate > 100) {
       setIsDragging(false);
       handlePrevious();
@@ -33,42 +36,74 @@ export default function ProjectSlider({ list }) {
   };
 
   const handlePrevious = () => {
-    if (slideShow.current.children.length > 0) {
-      const lastElement =
-        slideShow.current.children[slideShow.current.children.length - 1];
+    if (isAnimating || slideShow.current.children.length === 0) return;
 
-      slideShow.current.insertBefore(lastElement, slideShow.current.firstChild);
+    setIsAnimating(true);
+    const lastElement =
+      slideShow.current.children[slideShow.current.children.length - 1];
 
-      slideShow.current.style.transition = "none";
-      slideShow.current.style.transform = `translateX(-${lastElement.offsetWidth}px)`;
+    slideShow.current.insertBefore(lastElement, slideShow.current.firstChild);
 
-      requestAnimationFrame(() => {
-        slideShow.current.style.transition = `0.5s ease-out all`;
-        slideShow.current.style.transform = `translateX(0)`;
-      });
-    }
+    slideShow.current.style.transition = "none";
+    slideShow.current.style.transform = `translateX(-${lastElement.offsetWidth}px)`;
+
+    requestAnimationFrame(() => {
+      slideShow.current.style.transition = `0.5s ease-out all`;
+      slideShow.current.style.transform = `translateX(0)`;
+    });
+
+    const resetAnimation = () => {
+      setIsAnimating(false);
+      slideShow.current.removeEventListener("transitionend", resetAnimation);
+    };
+
+    slideShow.current.addEventListener("transitionend", resetAnimation);
+
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? list.length - 1 : prevIndex - 1
+    );
   };
 
   const handleNext = () => {
-    if (slideShow.current.children.length > 0) {
-      const firstElement = slideShow.current.children[0];
-      const slideWidth = firstElement.offsetWidth;
+    if (isAnimating || slideShow.current.children.length === 0) return;
 
-      slideShow.current.style.transition = `0.45s ease-out all`;
-      slideShow.current.style.transform = `translateX(-${slideWidth}px)`;
+    setIsAnimating(true);
+    const firstElement = slideShow.current.children[0];
+    const slideWidth = firstElement.offsetWidth;
 
-      const transition = () => {
-        slideShow.current.style.transition = `none`;
-        slideShow.current.style.transform = `translateX(0)`;
+    slideShow.current.style.transition = `0.45s ease-out all`;
+    slideShow.current.style.transform = `translateX(-${slideWidth}px)`;
 
-        slideShow.current.appendChild(firstElement);
+    const transition = () => {
+      slideShow.current.style.transition = `none`;
+      slideShow.current.style.transform = `translateX(0)`;
 
-        slideShow.current.removeEventListener("transitionend", transition);
-      };
+      slideShow.current.appendChild(firstElement);
 
-      slideShow.current.addEventListener("transitionend", transition);
-    }
+      slideShow.current.removeEventListener("transitionend", transition);
+      setIsAnimating(false);
+    };
+
+    slideShow.current.addEventListener("transitionend", transition);
+
+    setActiveIndex((prevIndex) =>
+      prevIndex === list.length - 1 ? 0 : prevIndex + 1
+    );
   };
+
+  useEffect(() => {
+    const slideShowElement = slideShow.current;
+    slideShowElement.addEventListener("touchstart", handleDragStart, {
+      passive: false,
+    });
+    slideShowElement.addEventListener("touchmove", handleDragMove, {
+      passive: false,
+    });
+    return () => {
+      slideShowElement.removeEventListener("touchstart", handleDragStart);
+      slideShowElement.removeEventListener("touchmove", handleDragMove);
+    };
+  }, []);
 
   return (
     <div
@@ -83,7 +118,13 @@ export default function ProjectSlider({ list }) {
     >
       <ul className={styles.sliderCont} ref={slideShow}>
         {list.map((item, index) => (
-          <li id={item.id} key={item.title} className={`${styles.slide}`}>
+          <li
+            id={item.id}
+            key={item.title}
+            className={`${styles.slide} ${
+              index === activeIndex ? styles.active : ""
+            }`}
+          >
             <Image
               className={styles.decoration}
               src={item.decoration}
@@ -103,8 +144,8 @@ export default function ProjectSlider({ list }) {
               className={styles.image}
               src={item.image}
               alt={item.title}
-              width={697.36}
-              height={523.02}
+              width={540.8}
+              height={428.3}
             />
           </li>
         ))}
