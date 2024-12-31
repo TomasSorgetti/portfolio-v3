@@ -9,6 +9,8 @@
   --cian: #30c2e2;
   --gray: #959595;
   --black: #111111;
+
+  scroll-behavior: smooth;
 }
 
 body {

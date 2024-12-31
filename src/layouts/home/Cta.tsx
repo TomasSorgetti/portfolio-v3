@@ -26,7 +26,8 @@ export default function Cta() {
         <div className="flex gap-4 justify-center">
           <a
             className="uppercase border border-white py-4 px-8 rounded-full"
-            href=""
+            href="https://github.com/TomasSorgetti"
+            target="blank"
           >
             View GitHub
           </a>

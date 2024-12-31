@@ -2,8 +2,11 @@ import { technologies } from "@/data/technologies";
 
 export default function Skills() {
   return (
-    <section className="my-32 max-w-[1080px] mx-auto p-4 md:p-8 flex flex-col items-center text-center">
-      <h2 className="text-gradient text-[42px] font-bold">Skills</h2>
+    <section
+      id="skills"
+      className="my-32 max-w-[1080px] mx-auto p-4 md:p-8 flex flex-col items-center text-center"
+    >
+      <h2 className="uppercase text-gradient text-[42px] font-bold">Skills</h2>
       <p className="max-w-[468px] text-gray mt-4 mb-8 block leading-[26px]">
         Here’s a list of the technologies I’m passionate about. These are the
         tools that help me build the web the way I see it.

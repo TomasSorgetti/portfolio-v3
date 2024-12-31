@@ -1,0 +1,93 @@
+.projectSlider {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  position: relative;
+}
+.sliderCont {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: all 0.45s ease;
+}
+.slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 10rem;
+  transition: all 0.45s ease;
+  z-index: 1;
+}
+
+.textCont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.textCont h3 {
+  font-size: 3.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-transform: uppercase;
+}
+.textCont h3 span {
+  color: var(--pink);
+}
+.textCont p {
+  display: block;
+  max-width: 420px;
+  margin-bottom: 1rem;
+}
+.decoration {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  z-index: -1;
+  transition: all 1s ease-in-out;
+}
+
+.decoration {
+  transition: transform 0.5s ease-out;
+}
+.image {
+  transition: transform 0.5s ease-out;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--pink);
+  cursor: pointer;
+  transition: all 0.45s ease;
+}
+.dot.active {
+  width: 16px;
+  height: 16px;
+}
+.arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 2;
+}

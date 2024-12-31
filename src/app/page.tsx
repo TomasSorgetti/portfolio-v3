@@ -3,11 +3,14 @@ import Contact from "@/layouts/home/Contact";
 import Cta from "@/layouts/home/Cta";
 import HomeBanner from "@/layouts/home/HomeBanner";
 import Skills from "@/layouts/home/Skills";
+import ProjectSlider from "@/components/sliders/projectSlider/ProjectSlider";
+import { projectList } from "@/data/projects";
 
 export default function Home() {
   return (
     <main>
       <HomeBanner />
+      <ProjectSlider list={projectList} />
       <About />
       <Skills />
       <Cta />

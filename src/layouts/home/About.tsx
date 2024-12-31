@@ -21,8 +21,8 @@ export default function About() {
             <h3 className="uppercase">MY FAVORITES</h3>
           </div>
           <p className="text-gray">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-            sapiente nulla, sint error odit, repellendus nemo perferendis minima
+            I’m a big fan of video games, cats, music, and of course, coding.
+            These are the things that keep me inspired and motivated every day.
           </p>
         </div>
 
@@ -33,8 +33,10 @@ export default function About() {
             <h3 className="uppercase">MY JOURNEY</h3>
           </div>
           <p className="text-gray">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-            sapiente nulla, sint error odit, repellendus nemo perferendis minima
+            It all started with a spark—an interest in how things work behind
+            the screen. From experimenting with HTML in my free time to
+            developing full-fledged web applications, my journey has been one of
+            exploration, challenges, and growth. And the story is far from over!
           </p>
         </div>
 
@@ -45,21 +47,31 @@ export default function About() {
             <h3 className="uppercase">MY MUSIC PICKS</h3>
           </div>
           <p className="text-gray">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-            sapiente nulla, sint error odit, repellendus nemo perferendis minima
+            I’m a fan of a variety of music genres, including rock and roll,
+            jazz, and classical. Each one brings its own vibe and inspiration.
           </p>
         </div>
 
         {/* card 4 */}
-        <div className="flex flex-col gap-16 bg-black p-8 rounded-[20px] h-[350px] md:col-span-2 border-2 border-transparent hover:border-pink cursor-pointer transition-all">
-          <div className="flex items-center gap-[21px]">
-            <WorldIcon />
-            <h3 className="uppercase">GET IN TOUCH</h3>
+        <div className="flex flex-col gap-10 bg-black p-8 rounded-[20px] h-[350px] md:flex-row md:gap-32 md:items-center md:col-span-2 border-2 border-transparent hover:border-pink cursor-pointer transition-all">
+          <div className="flex flex-col gap-16 md:h-full md:items-start">
+            <div className="flex items-center gap-[21px]">
+              <WorldIcon />
+              <h3 className="uppercase">GET IN TOUCH</h3>
+            </div>
+            <p className="text-gray max-w-[430px]">
+              I’d love to hear from you! Whether it’s a question, a
+              collaboration idea, or just to say hi, don’t hesitate to reach
+              out.
+            </p>
           </div>
-          <p className="text-gray">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-            sapiente nulla, sint error odit, repellendus nemo perferendis minima
-          </p>
+          <ul>
+            <li className="text-gray">tomassorgetti456@gmail.com</li>
+            <li className="text-gray">(+54) 11 3632 3780</li>
+            <li className="text-gray">Behance</li>
+            <li className="text-gray">Linkedin</li>
+            <li className="text-gray">GitHub</li>
+          </ul>
         </div>
       </div>
     </section>
