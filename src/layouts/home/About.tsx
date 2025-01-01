@@ -2,6 +2,7 @@ import HobbyIcon from "@/components/icons/HobbyIcon";
 import MusicIcon from "@/components/icons/MusicIcon";
 import PcIcon from "@/components/icons/PcIcon";
 import WorldIcon from "@/components/icons/WorldIcon";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -17,18 +18,6 @@ export default function About() {
         {/* card 1 */}
         <div className="flex flex-col gap-16 h-[350px] bg-black p-8 rounded-[20px] hover:border-pink border-2 border-transparent cursor-pointer transition-all">
           <div className="flex items-center gap-[21px]">
-            <HobbyIcon />
-            <h3 className="uppercase">MY FAVORITES</h3>
-          </div>
-          <p className="text-gray">
-            I’m a big fan of video games, cats, music, and of course, coding.
-            These are the things that keep me inspired and motivated every day.
-          </p>
-        </div>
-
-        {/* card 2 */}
-        <div className="flex flex-col gap-16 h-full bg-black p-8 rounded-[20px] row-span-2 hover:border-pink border-2 border-transparent cursor-pointer transition-all">
-          <div className="flex items-center gap-[21px]">
             <PcIcon />
             <h3 className="uppercase">MY JOURNEY</h3>
           </div>
@@ -38,6 +27,27 @@ export default function About() {
             developing full-fledged web applications, my journey has been one of
             exploration, challenges, and growth. And the story is far from over!
           </p>
+        </div>
+
+        {/* card 2 */}
+        <div className="relative flex flex-col gap-16 h-full bg-black p-8 rounded-[20px] row-span-2 hover:border-pink border-2 border-transparent cursor-pointer transition-all group">
+          <div className="flex items-center gap-[21px]">
+            <HobbyIcon />
+            <h3 className="uppercase">MY FAVORITES</h3>
+          </div>
+          <p className="text-gray">
+            I’m a big fan of video games, cats, music, and of course, coding.
+            These are the things that keep me inspired and motivated every day.
+            But above all, what I love the most is my cat, Katy—my constant
+            companion and source of joy.
+          </p>
+          <Image
+            src="/images/about/katy.png"
+            alt="my adorable cat"
+            width={368.33}
+            height={373.17}
+            className="w-[368.33px] h-[373.17px] object-contain absolute bottom-0 right-0 filter grayscale transition-all duration-500 group-hover:grayscale-0"
+          />
         </div>
 
         {/* card 3 */}

@@ -173,8 +173,10 @@ export default function ProjectSlider({ list }) {
         {list.map((item, index) => (
           <span
             key={item.title}
-            className={`block w-[10px] h-[10px] rounded-full bg-gray cursor-pointer transition-all ${
-              index === activeIndex ? "bg-gradient w-4 h-4" : ""
+            className={`block rounded-full bg-gray cursor-pointer transition-all ${
+              index === activeIndex
+                ? "bg-gradient w-4 h-4"
+                : "w-[10px] h-[10px]"
             }`}
           >
             {/* Dot */}
