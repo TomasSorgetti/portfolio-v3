@@ -105,7 +105,8 @@ export default function ProjectSlider({ list }) {
   }, []);
 
   return (
-    <div
+    <section
+      id="projects"
       onMouseDown={handleDragStart}
       onMouseMove={handleDragMove}
       onMouseUp={handleDragEnd}
@@ -126,7 +127,7 @@ export default function ProjectSlider({ list }) {
             className="min-w-full relative flex justify-between items-center px-[10rem] py-[8rem] z-10"
           >
             <Image
-              className={`absolute top-[4rem] left-[16rem] z-[-1] transition-all duration-1000 ease-in-out ${
+              className={`absolute top-[4rem] h-auto w-auto left-[16rem] z-[-1] transition-all duration-1000 ease-in-out ${
                 index === activeIndex ? "transform -translate-x-60" : ""
               }`}
               src={item.decoration}
@@ -135,7 +136,11 @@ export default function ProjectSlider({ list }) {
               height={263}
             />
 
-            <div className="flex flex-col items-start gap-4">
+            <div
+              className={`flex flex-col items-start gap-4 transform transition-all duration-1000 ease-in-out mt-[6rem]  ${
+                index === activeIndex ? "translate-y-[-6rem]" : ""
+              }`}
+            >
               <h3 className="flex flex-col items-start uppercase text-[3.625rem] font-bold">
                 {item.title}
                 <span className="text-gradient">{item.titleSpan}</span>
@@ -147,7 +152,7 @@ export default function ProjectSlider({ list }) {
             </div>
 
             <Image
-              className={`transition-all duration-1000 ease-in-out ${
+              className={`transition-all duration-1000 ease-in-out h-[428.3px] w-[540.8px] ${
                 index === activeIndex ? "transform scale-125" : ""
               }`}
               src={item.image}
@@ -176,6 +181,6 @@ export default function ProjectSlider({ list }) {
           </span>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

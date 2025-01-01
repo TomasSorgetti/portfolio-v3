@@ -31,11 +31,12 @@ export default function HomeBanner() {
           <MainButton href="#contact">Get in Touch</MainButton>
         </div>
         <Image
-          className="hidden lg:block"
-          src="/images/horse.png"
+          className="hidden lg:block filter grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
+          src="/images/banner/banner.png"
           alt="horse"
-          width={700}
-          height={700}
+          width={584}
+          height={584}
+          unoptimized
         />
       </div>
     </section>

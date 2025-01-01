@@ -12,6 +12,9 @@
 
   scroll-behavior: smooth;
 }
+section[id] {
+  scroll-margin-top: 200px;
+}
 
 body {
   color: var(--text);
