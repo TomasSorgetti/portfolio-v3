@@ -9,17 +9,17 @@ export default function Navbar() {
         </a>
         <ul className="gap-6 hidden lg:flex">
           <li className="flex items-center">
-            <a className="uppercase" href="#projects">
+            <a className="uppercase font-medium" href="#projects">
               Projects
             </a>
           </li>
           <li className="flex items-center">
-            <a className="uppercase" href="#about">
+            <a className="uppercase font-medium" href="#about">
               About me
             </a>
           </li>
           <li className="flex items-center">
-            <a className="uppercase" href="#skills">
+            <a className="uppercase font-medium" href="#skills">
               Skills
             </a>
           </li>

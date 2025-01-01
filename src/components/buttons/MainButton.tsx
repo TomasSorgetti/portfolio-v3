@@ -1,7 +1,7 @@
 export default function MainButton({
   children,
   href,
-  variant = "secondary",
+  variant = "primary",
 }: {
   href: string;
   children: React.ReactNode;
