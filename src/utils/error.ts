@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const createCustomError = (
   message: string,
   statusCode: number,
-  data: any
+  data: any | null
 ) => {
   const error = new Error(message);
   error.response = {

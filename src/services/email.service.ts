@@ -1,6 +1,10 @@
 import { createCustomError } from "@/utils/error";
 
-export const sendEmail = async (formData) => {
+export const sendEmail = async (formData: {
+  name: string;
+  email: string;
+  message: string;
+}) => {
   try {
     const response = await fetch("/api/email", {
       method: "POST",
@@ -10,14 +14,17 @@ export const sendEmail = async (formData) => {
       body: JSON.stringify(formData),
     });
 
-    if (!response.ok) throw createCustomError("Failed to send message.");
+    if (!response.ok)
+      throw createCustomError("Failed to send message.", 500, null);
 
     return { success: true, message: "Message sent successfully!" };
   } catch (error) {
-    console.error("Error sending contact form:", error);
+    const errorAsError = error as Error;
+    console.error("Error sending contact form:", errorAsError);
     return {
       success: false,
-      message: error.message || "There was an error. Please try again later.",
+      message:
+        errorAsError.message || "There was an error. Please try again later.",
     };
   }
 };
