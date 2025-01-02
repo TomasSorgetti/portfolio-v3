@@ -58,3 +58,6 @@ body {
 .border-gradient.primary::after {
   background: transparent;
 }
+.icon-hover:hover svg path {
+  fill: var(--pink);
+}

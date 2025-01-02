@@ -3,6 +3,11 @@ import MusicIcon from "@/components/icons/MusicIcon";
 import PcIcon from "@/components/icons/PcIcon";
 import WorldIcon from "@/components/icons/WorldIcon";
 import Image from "next/image";
+import GmailIcon from "@/components/icons/GmailIcon";
+import WhatsappIcon from "@/components/icons/WhatsappIcon";
+import BehanceIcon from "@/components/icons/BehanceIcon";
+import GitHubIcon from "@/components/icons/GitHubIcon";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
 
 export default function About() {
   return (
@@ -75,12 +80,27 @@ export default function About() {
               out.
             </p>
           </div>
-          <ul>
-            <li className="text-gray">tomassorgetti456@gmail.com</li>
-            <li className="text-gray">(+54) 11 3632 3780</li>
-            <li className="text-gray">Behance</li>
-            <li className="text-gray">Linkedin</li>
-            <li className="text-gray">GitHub</li>
+          <ul className="flex flex-col gap-2">
+            <li className="text-gray flex items-center gap-2 icon-hover">
+              <GmailIcon />
+              tomassorgetti456@gmail.com
+            </li>
+            <li className="text-gray flex items-center gap-2 icon-hover">
+              <WhatsappIcon />
+              (+54) 11 3632 3780
+            </li>
+            <li className="text-gray flex items-center gap-2 icon-hover">
+              <BehanceIcon />
+              Behance
+            </li>
+            <li className="text-gray flex items-center gap-2 icon-hover">
+              <LinkedinIcon />
+              Linkedin
+            </li>
+            <li className="text-gray flex items-center gap-2 icon-hover">
+              <GitHubIcon />
+              GitHub
+            </li>
           </ul>
         </div>
       </div>
