@@ -3,6 +3,7 @@
 import FormField from "../formField/FormField";
 import { useState } from "react";
 import { validateForm } from "./contact.validation";
+import { sendEmail } from "@/services/email.service";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -38,6 +39,20 @@ export default function ContactForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
+    await sendEmail(formData).then(() => {
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setErrorData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setIsLoading(false);
+    });
   };
 
   return (

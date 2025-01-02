@@ -2,11 +2,11 @@
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { handleErrorResponse } from "utils/error";
+import { handleErrorResponse } from "@/utils/error";
 
 const { EMAIL_USER, EMAIL_TO, EMAIL_PASSWORD } = process.env;
 
-const POST = async (req) => {
+const POST = async (req: Request) => {
   try {
     const body = await req.json();
 
