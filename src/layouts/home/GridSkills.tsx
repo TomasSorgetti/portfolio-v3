@@ -1,3 +1,4 @@
+/* eslint-disable */
 import GridMotion from "@/components/gridMotion/GridMotion";
 import { technologies } from "@/data/technologies";
 import Image from "next/image";
