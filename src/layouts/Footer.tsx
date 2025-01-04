@@ -43,7 +43,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" target="blank">
+                  <a href="https://github.com/TomasSorgetti" target="blank">
                     <GitHubIcon />
                   </a>
                 </li>

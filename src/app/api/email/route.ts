@@ -35,7 +35,7 @@ const POST = async (req: Request) => {
 
     return NextResponse.json({ message: "Mail sent successfully" });
   } catch (error) {
-    return handleErrorResponse(error, "Error sending mail");
+    return handleErrorResponse(error as Error, "Error sending mail");
   }
 };
 
