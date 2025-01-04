@@ -13,7 +13,7 @@ export default function Skills() {
         tools that help me build the web the way I see it.
       </p>
 
-      <div className="my-24 mx-auto max-w-[1080px]">
+      <div className="my-24 w-full mx-auto max-w-[1080px]">
         <div className="relative w-full mx-auto max-w-[1080px] opacity-90 dark:opacity-70 overflow-hidden px-5 lg:px-12 flex justify-center items-center gap-4 lg:gap-8">
           {/* Pseudo-elemento de fondo con gradiente */}
           <div className="absolute inset-0 w-full bg-[linear-gradient(to_right, hsl(var(--background-default))_0%, transparent_10%, transparent_90%, hsl(var(--background-default))_100%)] z-10"></div>
