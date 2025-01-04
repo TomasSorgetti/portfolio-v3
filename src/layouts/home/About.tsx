@@ -8,6 +8,7 @@ import WhatsappIcon from "@/components/icons/WhatsappIcon";
 import BehanceIcon from "@/components/icons/BehanceIcon";
 import GitHubIcon from "@/components/icons/GitHubIcon";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
+import MainCard from "@/components/cards/mainCard/MainCard";
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
       <span className="text-gray">Buenos Aires Province, Argentina</span>
       <div className="mt-6 grid grid-cols-1 gap-4 grid-rows-5 md:grid-cols-2 md:grid-rows-3">
         {/* card 1 */}
-        <div className="flex flex-col gap-16 h-[350px] bg-black p-8 rounded-[20px] hover:border-pink border-2 border-transparent cursor-pointer transition-all">
+        <MainCard className="flex flex-col gap-16 h-[350px] bg-black p-8 rounded-[20px] hover:border-pink border-2 border-transparent cursor-pointer transition-all">
           <div className="flex items-center gap-[21px]">
             <PcIcon />
             <h3 className="uppercase">MY JOURNEY</h3>
@@ -32,10 +33,10 @@ export default function About() {
             developing full-fledged web applications, my journey has been one of
             exploration, challenges, and growth. And the story is far from over!
           </p>
-        </div>
+        </MainCard>
 
         {/* card 2 */}
-        <div className="relative flex flex-col gap-16 h-full bg-black p-8 rounded-[20px] row-span-2 hover:border-pink border-2 border-transparent cursor-pointer transition-all group">
+        <MainCard className="relative flex flex-col gap-16 h-full bg-black p-8 rounded-[20px] row-span-2 hover:border-pink border-2 border-transparent cursor-pointer transition-all group">
           <div className="flex items-center gap-[21px]">
             <HobbyIcon />
             <h3 className="uppercase">MY FAVORITES</h3>
@@ -53,10 +54,10 @@ export default function About() {
             height={373.17}
             className="w-[368.33px] h-[373.17px] object-contain absolute bottom-0 right-0 filter grayscale transition-all duration-500 group-hover:grayscale-0"
           />
-        </div>
+        </MainCard>
 
         {/* card 3 */}
-        <div className="flex flex-col gap-16 bg-black p-8 rounded-[20px] h-[350px] hover:border-pink border-2 border-transparent cursor-pointer transition-all">
+        <MainCard className="flex flex-col gap-16 bg-black p-8 rounded-[20px] h-[350px] hover:border-pink border-2 border-transparent cursor-pointer transition-all">
           <div className="flex items-center gap-[21px]">
             <MusicIcon />
             <h3 className="uppercase">MY MUSIC PICKS</h3>
@@ -65,10 +66,10 @@ export default function About() {
             I’m a fan of a variety of music genres, including rock and roll,
             jazz, and classical. Each one brings its own vibe and inspiration.
           </p>
-        </div>
+        </MainCard>
 
         {/* card 4 */}
-        <div className="flex flex-col gap-10 bg-black p-8 rounded-[20px] h-[350px] md:flex-row md:gap-32 md:items-center md:col-span-2 border-2 border-transparent hover:border-pink cursor-pointer transition-all">
+        <MainCard className="flex flex-col gap-10 bg-black p-8 rounded-[20px] h-[350px] md:flex-row md:gap-32 md:items-center md:col-span-2 border-2 border-transparent hover:border-pink cursor-pointer transition-all">
           <div className="flex flex-col gap-16 md:h-full md:items-start">
             <div className="flex items-center gap-[21px]">
               <WorldIcon />
@@ -102,7 +103,7 @@ export default function About() {
               GitHub
             </li>
           </ul>
-        </div>
+        </MainCard>
       </div>
     </section>
   );
