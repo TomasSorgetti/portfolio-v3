@@ -11,7 +11,7 @@ interface IMainCardProps {
 export default function MainCard({
   children,
   className = "",
-  spotlightColor = "rgba(48, 194, 226, 0.2)",
+  spotlightColor = "rgba(255, 255, 255, 0.1)",
 }: IMainCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
 
