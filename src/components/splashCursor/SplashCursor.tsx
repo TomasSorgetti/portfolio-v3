@@ -1,4 +1,6 @@
+/* eslint-disable */
 "use client";
+
 import { useEffect, useRef } from "react";
 
 function SplashCursor({

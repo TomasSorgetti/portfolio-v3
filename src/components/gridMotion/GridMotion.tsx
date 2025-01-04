@@ -6,7 +6,7 @@ import "./GridMotion.css";
 
 const GridMotion = ({ items = [], gradientColor = "black" }) => {
   const gridRef = useRef(null);
-  const rowRefs = useRef([]); // Array of refs for each row
+  const rowRefs = useRef([]);
   const mouseXRef = useRef(window.innerWidth / 2);
 
   const totalItems = 28;
