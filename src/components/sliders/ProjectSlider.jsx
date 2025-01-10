@@ -124,10 +124,10 @@ export default function ProjectSlider({ list }) {
           <li
             id={item.id}
             key={item.title}
-            className="min-w-full relative flex justify-between items-center px-[10rem] py-[8rem] z-10"
+            className="min-w-full px-6 relative flex flex-col-reverse justify-between items-center py-[8rem] z-10 lg:px-[10rem] lg:flex-row"
           >
             <Image
-              className={`absolute top-[4rem] h-auto w-auto left-[16rem] z-[-1] transition-all duration-1000 ease-in-out ${
+              className={`absolute top-[4rem] h-auto w-auto max-w-full left-[16rem] z-[-1] transition-all duration-1000 ease-in-out ${
                 index === activeIndex ? "transform -translate-x-60" : ""
               }`}
               src={item.decoration}
@@ -137,7 +137,7 @@ export default function ProjectSlider({ list }) {
             />
 
             <div
-              className={`flex flex-col items-start gap-4 transform transition-all duration-1000 ease-in-out mt-[6rem]  ${
+              className={`w-full flex flex-col items-start gap-4 transform transition-all duration-1000 ease-in-out mt-[6rem] lg:w-auto  ${
                 index === activeIndex ? "translate-y-[-6rem]" : ""
               }`}
             >
@@ -152,19 +152,19 @@ export default function ProjectSlider({ list }) {
             </div>
 
             <Image
-              className={`transition-all duration-1000 ease-in-out h-[428.3px] w-[540.8px] ${
+              className={`w-full transition-all duration-1000 ease-in-out h-auto lg:w-[617.81px] ${
                 index === activeIndex ? "transform scale-125" : ""
               }`}
               src={item.image}
               alt={item.title}
-              width={540.8}
-              height={428.3}
+              width={617.81}
+              height={463.36}
             />
           </li>
         ))}
       </ul>
 
-      <div className="absolute top-0 left-0 w-full h-full flex justify-between items-center py-8 z-10">
+      <div className="hidden absolute top-0 left-0 w-full h-full lg:flex justify-between items-center py-8 z-10">
         <Arrow direction="left" handleClick={handlePrevious} />
         <Arrow direction="right" handleClick={handleNext} />
       </div>
