@@ -22,7 +22,7 @@ export default function About() {
       <span className="text-gray">Buenos Aires Province, Argentina</span>
       <div className="mt-6 grid grid-cols-1 gap-4 grid-rows-5 md:grid-cols-2 md:grid-rows-3">
         {/* card 1 */}
-        <MainCard className="flex flex-col gap-16 h-[350px] bg-black p-8 rounded-[20px] hover:border-gray border-2 border-transparent cursor-pointer transition-all">
+        <MainCard className="flex flex-col gap-16 h-[350px] bg-black p-8 rounded-[20px] hover:border-dark_gray border-2 border-transparent cursor-pointer transition-all">
           <div className="flex items-center gap-[21px]">
             <PcIcon />
             <h3 className="uppercase">MY JOURNEY</h3>
@@ -36,7 +36,7 @@ export default function About() {
         </MainCard>
 
         {/* card 2 */}
-        <MainCard className="relative flex flex-col gap-16 h-full bg-black p-8 rounded-[20px] row-span-2 hover:border-gray border-2 border-transparent cursor-pointer transition-all group">
+        <MainCard className="relative flex flex-col gap-16 h-full bg-black p-8 rounded-[20px] row-span-2 hover:border-dark_gray border-2 border-transparent cursor-pointer transition-all group">
           <div className="flex items-center gap-[21px]">
             <HobbyIcon />
             <h3 className="uppercase">MY FAVORITES</h3>
@@ -57,7 +57,7 @@ export default function About() {
         </MainCard>
 
         {/* card 3 */}
-        <MainCard className="flex flex-col gap-16 bg-black p-8 rounded-[20px] h-[350px] hover:border-gray border-2 border-transparent cursor-pointer transition-all">
+        <MainCard className="flex flex-col gap-16 bg-black p-8 rounded-[20px] h-[350px] hover:border-dark_gray border-2 border-transparent cursor-pointer transition-all">
           <div className="flex items-center gap-[21px]">
             <MusicIcon />
             <h3 className="uppercase">MY MUSIC PICKS</h3>
@@ -69,7 +69,7 @@ export default function About() {
         </MainCard>
 
         {/* card 4 */}
-        <MainCard className="flex flex-col gap-10 bg-black p-8 rounded-[20px] h-[350px] md:flex-row md:gap-32 md:items-center md:col-span-2 border-2 border-transparent hover:border-gray cursor-pointer transition-all">
+        <MainCard className="flex flex-col gap-10 bg-black p-8 rounded-[20px] h-[350px] md:flex-row md:gap-32 md:items-center md:col-span-2 border-2 border-transparent hover:border-dark_gray cursor-pointer transition-all">
           <div className="flex flex-col gap-16 md:h-full md:items-start">
             <div className="flex items-center gap-[21px]">
               <WorldIcon />
