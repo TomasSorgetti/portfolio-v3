@@ -1,16 +1,8 @@
 import MainButton from "@/components/buttons/MainButton";
-import Image from "next/image";
 
 export default function Cta() {
   return (
-    <section className="relative flex justify-center items-center">
-      <Image
-        className="w-full h-auto"
-        src="/videos/cta.png"
-        alt="cta"
-        width={1440}
-        height={680}
-      />
+    <section className="relative flex justify-center items-center h-screen bg-[url('/images/cta/bg.png')] bg-cover bg-center bg-no-repeat">
       <div className="absolute z-10 flex flex-col items-center gap-16 text-center">
         <h2 className="text-[42px] font-bold uppercase">
           Take the First Step –{" "}
@@ -25,13 +17,13 @@ export default function Cta() {
         </p>
         <div className="flex gap-4 justify-center">
           <a
-            className="uppercase border border-white py-4 px-8 rounded-full"
+            className="uppercase font-bold border border-white py-4 px-8 rounded-full hover:bg-white hover:text-black transition-all"
             href="https://github.com/TomasSorgetti"
             target="blank"
           >
             View GitHub
           </a>
-          <MainButton variant="primary" href="#contact">
+          <MainButton variant="primary" href="#contact" target="_self">
             Get in Touch
           </MainButton>
         </div>

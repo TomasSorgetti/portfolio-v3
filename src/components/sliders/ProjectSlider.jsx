@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Arrow from "./arrow/Arrow";
+import MainButton from "../buttons/MainButton";
 
 export default function ProjectSlider({ list }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -114,7 +115,7 @@ export default function ProjectSlider({ list }) {
       onTouchStart={handleDragStart}
       onTouchMove={handleDragMove}
       onTouchEnd={handleDragEnd}
-      className="w-full max-w-[1440px] mx-auto overflow-hidden cursor-grab relative select-none"
+      className="w-full max-w-[1440px] mx-auto overflow-hidden cursor-grab relative select-none flex items-center"
     >
       <ul
         className="flex flex-nowrap w-full transition-all touch-pan-y"
@@ -134,42 +135,44 @@ export default function ProjectSlider({ list }) {
               alt={item.title}
               width={950}
               height={263}
+              draggable="false"
             />
 
             <div
-              className={`w-full flex flex-col items-start gap-4 transform transition-all duration-1000 ease-in-out mt-[6rem] lg:w-auto  ${
-                index === activeIndex ? "translate-y-[-6rem]" : ""
+              className={`w-full flex flex-col items-start gap-4 transform transition-all duration-1000 ease-in-out mt-[8rem] lg:w-auto  ${
+                index === activeIndex ? "translate-y-[-4rem]" : ""
               }`}
             >
-              <h3 className="flex flex-col items-start uppercase text-[3.625rem] font-bold">
+              <h3 className="flex flex-col items-start uppercase text-[3.625rem] font-bold leading-[4.3rem]">
                 {item.title}
                 <span className="text-gradient">{item.titleSpan}</span>
               </h3>
               <p className="block max-w-[420px] mb-4 text-gray">
                 {item.description}
               </p>
-              <a href={item.href}>{item.cta}</a>
+              <MainButton href={item.href} target="blank">
+                {item.cta}
+              </MainButton>
             </div>
 
             <Image
-              className={`w-full transition-all duration-1000 ease-in-out h-auto lg:w-[617.81px] ${
+              className={`w-full transition-all duration-1000 ease-in-out h-auto lg:w-full lg:max-w-[50%] ${
                 index === activeIndex ? "transform scale-125" : ""
               }`}
               src={item.image}
               alt={item.title}
               width={617.81}
               height={463.36}
+              draggable="false"
             />
           </li>
         ))}
       </ul>
 
-      <div className="hidden absolute top-0 left-0 w-full h-full lg:flex justify-between items-center py-8 z-10">
-        <Arrow direction="left" handleClick={handlePrevious} />
-        <Arrow direction="right" handleClick={handleNext} />
-      </div>
+      <Arrow direction="left" handleClick={handlePrevious} />
+      <Arrow direction="right" handleClick={handleNext} />
 
-      <div className="flex justify-center items-center gap-2">
+      <div className="absolute bottom-0 w-full flex justify-center items-center gap-2">
         {list.map((item, index) => (
           <span
             key={item.title}

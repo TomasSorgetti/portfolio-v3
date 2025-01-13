@@ -10,6 +10,8 @@ export const sendEmail = async (formData: Record<string, string>) => {
       body: JSON.stringify(formData),
     });
 
+    console.log(response);
+
     if (!response.ok)
       throw createCustomError("Failed to send message.", 500, null);
 

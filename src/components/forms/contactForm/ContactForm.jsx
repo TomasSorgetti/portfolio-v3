@@ -96,7 +96,13 @@ export default function ContactForm() {
         onBlur={handleBlur}
         error={errorData.message}
       />
-      <button disabled={isLoading}>Get in Touch</button>
+      <button
+        type="submit"
+        className="w-full text-white py-4 px-8 mt-8 bg-gradient shadow rounded-md uppercase font-bold transition-all"
+        disabled={isLoading}
+      >
+        Get in Touch
+      </button>
     </form>
   );
 }
