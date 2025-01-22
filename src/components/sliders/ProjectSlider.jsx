@@ -115,7 +115,7 @@ export default function ProjectSlider({ list }) {
       onTouchStart={handleDragStart}
       onTouchMove={handleDragMove}
       onTouchEnd={handleDragEnd}
-      className="w-full max-w-[1440px] mx-auto overflow-hidden cursor-grab relative select-none"
+      className="w-full max-w-[1440px] mx-auto overflow-hidden cursor-grab relative select-none flex items-center"
     >
       <ul
         className="flex flex-nowrap w-full transition-all touch-pan-y"
@@ -176,7 +176,7 @@ export default function ProjectSlider({ list }) {
         <Arrow direction="right" handleClick={handleNext} />
       </div>
 
-      <div className="flex justify-center items-center gap-2">
+      <div className="absolute bottom-0 w-full flex justify-center items-center gap-2">
         {list.map((item, index) => (
           <span
             key={item.title}

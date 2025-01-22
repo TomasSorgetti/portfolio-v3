@@ -28,7 +28,9 @@ export default function HomeBanner() {
             efficient development, helping businesses stand out in the digital
             world. Ready to turn your vision into a unique web experience?
           </p>
-          <MainButton href="#contact">Get in Touch</MainButton>
+          <MainButton href="#contact" target="_self">
+            Get in Touch
+          </MainButton>
         </div>
         <Image
           className="hidden lg:block filter grayscale"

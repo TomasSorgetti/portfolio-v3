@@ -58,7 +58,9 @@ export default function Navbar() {
             </a>
           </li>
           <li onClick={hideNavbar}>
-            <MainButton href="#contact">Get in Touch</MainButton>
+            <MainButton href="#contact" target="_self">
+              Get in Touch
+            </MainButton>
           </li>
         </ul>
       </nav>

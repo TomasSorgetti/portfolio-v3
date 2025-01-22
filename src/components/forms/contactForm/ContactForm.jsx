@@ -97,8 +97,9 @@ export default function ContactForm() {
         error={errorData.message}
       />
       <button
-        disabled={isLoading}
         className="bg-white text-black py-4 w-full rounded-md uppercase hover:shadow-[0px_0px_20px_0px_rgba(255,255,255,0.1)] font-bold"
+        type="submit"
+        disabled={isLoading}
       >
         Get in Touch
       </button>
