@@ -11,21 +11,21 @@ export function validateForm(data) {
 
   //* Name validation
   if (name.trim() === "") {
-    errors.name = "El nombre es obligatorio";
+    errors.name = "Name is required";
   } else if (name.length < 3) {
-    errors.name = "El nombre debe tener al menos 3 caracteres";
+    errors.name = "Name must be at least 3 characters long";
   }
 
   //* Email validation
   if (email.trim() === "") {
-    errors.email = "El email es obligatorio";
+    errors.email = "Email is required";
   } else if (!/\S+@\S+\.\S+/.test(email)) {
-    errors.email = "El email no es válido";
+    errors.email = "Invalid email format";
   }
 
   //* Message validation
   if (message.trim() === "") {
-    errors.message = "El mensaje es obligatorio";
+    errors.message = "Message is required";
   }
 
   return errors;
