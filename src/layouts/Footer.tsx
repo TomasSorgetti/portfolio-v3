@@ -33,12 +33,18 @@ export default function Footer() {
                 className="flex gap-4 justify-center"
               >
                 <li>
-                  <a href="#" target="blank">
+                  <a
+                    href="https://www.behance.net/tomassorgetti"
+                    target="blank"
+                  >
                     <BehanceIcon />
                   </a>
                 </li>
                 <li>
-                  <a href="#" target="blank">
+                  <a
+                    href="https://www.linkedin.com/in/tomas-sorgetti/"
+                    target="blank"
+                  >
                     <LinkedinIcon />
                   </a>
                 </li>

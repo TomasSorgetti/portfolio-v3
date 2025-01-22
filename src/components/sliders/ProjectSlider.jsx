@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Arrow from "./arrow/Arrow";
+import MainButton from "../buttons/MainButton";
 
 export default function ProjectSlider({ list }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -124,48 +125,54 @@ export default function ProjectSlider({ list }) {
           <li
             id={item.id}
             key={item.title}
-            className="min-w-full relative flex justify-between items-center px-[10rem] py-[8rem] z-10"
+            className="min-w-full relative flex flex-col-reverse items-center px-4 py-[8rem] z-10 lg:flex-row lg:px-[8rem] lg:justify-between"
           >
             <Image
-              className={`absolute top-[4rem] h-auto w-auto left-[16rem] z-[-1] transition-all duration-1000 ease-in-out ${
+              className={`absolute top-[4rem] h-auto w-auto max-w-[100%] left-[16rem] z-[-1] transition-all duration-1000 ease-in-out ${
                 index === activeIndex ? "transform -translate-x-60" : ""
-              }`}
+              } md:top-[2rem]`}
               src={item.decoration}
               alt={item.title}
               width={950}
               height={263}
+              draggable={false}
             />
 
             <div
-              className={`flex flex-col items-start gap-4 transform transition-all duration-1000 ease-in-out mt-[6rem]  ${
+              className={`flex flex-col items-center text-center gap-4 transform transition-all duration-1000 ease-in-out mt-[8rem]  ${
                 index === activeIndex ? "translate-y-[-6rem]" : ""
-              }`}
+              } lg:items-start lg:text-left`}
             >
-              <h3 className="flex flex-col items-start uppercase text-[3.625rem] font-bold">
+              <h3 className="font-bold flex flex-col items-center uppercase text-[2.5rem] md:text-[3.5rem] lg:items-start">
                 {item.title}
                 <span className="text-gradient">{item.titleSpan}</span>
               </h3>
               <p className="block max-w-[420px] mb-4 text-gray">
                 {item.description}
               </p>
-              <a href={item.href}>{item.cta}</a>
+              <MainButton href={item.href} target="blank">
+                {item.cta}
+              </MainButton>
             </div>
 
             <Image
-              className={`transition-all duration-1000 ease-in-out h-[428.3px] w-[540.8px] ${
+              className={`transition-all duration-1000 ease-in-out h-auto w-full ${
                 index === activeIndex ? "transform scale-125" : ""
-              }`}
+              } lg:w-[50%]`}
               src={item.image}
               alt={item.title}
               width={540.8}
               height={428.3}
+              draggable={false}
             />
           </li>
         ))}
       </ul>
 
-      <div className="absolute top-0 left-0 w-full h-full flex justify-between items-center py-8 z-10">
+      <div className="hidden absolute h-full top-0 left-0 z-10 lg:flex">
         <Arrow direction="left" handleClick={handlePrevious} />
+      </div>
+      <div className="hidden absolute h-full top-0 right-0 z-10 lg:flex">
         <Arrow direction="right" handleClick={handleNext} />
       </div>
 

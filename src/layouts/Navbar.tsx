@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full py-6 px-4 ${
+      className={`fixed top-0 z-50 w-full py-4 px-4 ${
         scrolled && "bg-[#171717ee] shadow-lg shadow-black"
       }`}
     >
@@ -34,17 +34,26 @@ export default function Navbar() {
           } lg:relative lg:w-auto lg:bg-transparent lg:h-auto lg:flex-row lg:gap-8 lg:translate-x-0 `}
         >
           <li onClick={hideNavbar} className="flex items-center">
-            <a className="uppercase font-medium" href="#projects">
+            <a
+              className="uppercase font-medium hover:text-pink px-4 py-2"
+              href="#projects"
+            >
               Projects
             </a>
           </li>
           <li onClick={hideNavbar} className="flex items-center">
-            <a className="uppercase font-medium" href="#about">
+            <a
+              className="uppercase font-medium hover:text-pink px-4 py-2"
+              href="#about"
+            >
               About me
             </a>
           </li>
           <li onClick={hideNavbar} className="flex items-center">
-            <a className="uppercase font-medium" href="#skills">
+            <a
+              className="uppercase font-medium hover:text-pink px-4 py-2"
+              href="#skills"
+            >
               Skills
             </a>
           </li>

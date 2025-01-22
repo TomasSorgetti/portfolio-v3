@@ -25,7 +25,7 @@ export default function Cta() {
         </p>
         <div className="flex gap-4 justify-center">
           <a
-            className="uppercase border border-white py-4 px-8 rounded-full"
+            className="uppercase border border-white py-4 px-8 rounded-full hover:bg-white hover:text-black hover:shadow-[0px_0px_20px_0px_rgba(255,255,255,0.1)]"
             href="https://github.com/TomasSorgetti"
             target="blank"
           >

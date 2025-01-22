@@ -1,17 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import fontLocale from "next/font/local";
+import "../styles/globals.css";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const BaiJamjuree = fontLocale({
+  src: [
+    {
+      path: "./fonts/BaiJamjuree-Bold.ttf",
+      weight: "700",
+    },
+    {
+      path: "./fonts/BaiJamjuree-Medium.ttf",
+      weight: "500",
+    },
+  ],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const Manrope = fontLocale({
+  src: [
+    {
+      path: "./fonts/Manrope-SemiBold.ttf",
+      weight: "600",
+    },
+    {
+      path: "./fonts/Manrope-Regular.ttf",
+      weight: "400",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${BaiJamjuree.className} ${Manrope.className} antialiased`}
       >
         <Navbar />
         {children}

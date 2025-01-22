@@ -22,9 +22,21 @@ body {
   background-image: url("/images/pattern.png");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "BaiJamjuree", sans-serif;
+  font-weight: 700;
+}
+a {
+  font-family: "BaiJamjuree", sans-serif;
+}
 .text-gradient {
   background: linear-gradient(to right, var(--pink), var(--cian));
   -webkit-background-clip: text;
