@@ -2,7 +2,7 @@
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { handleErrorResponse } from "@/utils/error";
+import { handleErrorResponse } from "@/lib/utils/error";
 
 const { EMAIL_USER, EMAIL_TO, EMAIL_PASSWORD } = process.env;
 

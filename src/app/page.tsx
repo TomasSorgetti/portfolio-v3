@@ -1,12 +1,12 @@
 "use server";
 
-import About from "@/layouts/home/About";
-import Contact from "@/layouts/home/Contact";
-import HomeBanner from "@/layouts/home/HomeBanner";
-import Skills from "@/layouts/home/Skills";
-import Cta from "@/layouts/home/Cta";
-import ProjectSlider from "@/components/sliders/ProjectSlider";
-import { projectList } from "@/data/projects";
+import About from "@/components/home/About";
+import Contact from "@/components/home/Contact";
+import HomeBanner from "@/components/home/HomeBanner";
+import Skills from "@/components/home/Skills";
+import Cta from "@/components/home/Cta";
+import ProjectSlider from "@/components/ui/sliders/ProjectSlider";
+import { projectList } from "@/lib/data/projects";
 
 export default async function Home() {
   return (

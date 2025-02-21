@@ -1,8 +1,8 @@
 "use client";
 
-import MainButton from "@/components/buttons/MainButton";
+import MainButton from "@/components/ui/buttons/MainButton";
 import { useState } from "react";
-import HamburgerButton from "../components/buttons/HamburgerButton";
+import HamburgerButton from "../components/ui/buttons/HamburgerButton";
 import useScrolled from "../hooks/useScrolled";
 
 export default function Navbar() {

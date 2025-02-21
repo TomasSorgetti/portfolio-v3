@@ -1,6 +1,6 @@
-import LinkedinIcon from "@/components/icons/LinkedinIcon";
-import BehanceIcon from "../components/icons/BehanceIcon";
-import GitHubIcon from "@/components/icons/GitHubIcon";
+import LinkedinIcon from "@/components/ui/icons/LinkedinIcon";
+import BehanceIcon from "../components/ui/icons/BehanceIcon";
+import GitHubIcon from "@/components/ui/icons/GitHubIcon";
 export default function Footer() {
   return (
     <footer className="bg-black text-white w-full">
@@ -20,10 +20,21 @@ export default function Footer() {
                 <a
                   className="text-gray"
                   href="mailto:tomassorgetti456@gmail.com"
+                  target="blank"
+                  rel="noopener noreferrer"
+                  title="Email"
+                  aria-label="Email"
                 >
                   tomassorgetti456@gmail.com
                 </a>
-                <a className="text-gray" href="tel:+5491136323780">
+                <a
+                  className="text-gray"
+                  href="tel:+5491136323780"
+                  target="blank"
+                  rel="noopener noreferrer"
+                  title="Phone"
+                  aria-label="Phone"
+                >
                   (+54 9) 11 3632-3780
                 </a>
               </address>
@@ -36,6 +47,9 @@ export default function Footer() {
                   <a
                     href="https://www.behance.net/tomassorgetti"
                     target="blank"
+                    rel="noopener noreferrer"
+                    title="Behance"
+                    aria-label="Behance"
                   >
                     <BehanceIcon />
                   </a>
@@ -44,12 +58,21 @@ export default function Footer() {
                   <a
                     href="https://www.linkedin.com/in/tomas-sorgetti/"
                     target="blank"
+                    rel="noopener noreferrer"
+                    title="Linkedin"
+                    aria-label="Linkedin"
                   >
                     <LinkedinIcon />
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/TomasSorgetti" target="blank">
+                  <a
+                    href="https://github.com/TomasSorgetti"
+                    target="blank"
+                    rel="noopener noreferrer"
+                    title="GitHub"
+                    aria-label="GitHub"
+                  >
                     <GitHubIcon />
                   </a>
                 </li>
@@ -60,22 +83,42 @@ export default function Footer() {
               <span className="text-[32px] font-bold">Company</span>
               <ul className="flex flex-col gap-4 mt-4  lg:items-start lg:text-left">
                 <li>
-                  <a className="text-gray hover:text-white" href="#">
+                  <a
+                    className="text-gray hover:text-white"
+                    href="#projects"
+                    aria-label="Projects"
+                    title="Projects"
+                  >
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray hover:text-white" href="#">
+                  <a
+                    className="text-gray hover:text-white"
+                    href="#about"
+                    aria-label="About"
+                    title="About"
+                  >
                     About
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray hover:text-white" href="#">
+                  <a
+                    className="text-gray hover:text-white"
+                    href="#skills"
+                    aria-label="Skills"
+                    title="Skills"
+                  >
                     Skills
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray hover:text-white" href="#">
+                  <a
+                    className="text-gray hover:text-white"
+                    href="#contact"
+                    aria-label="Contact"
+                    title="Contact"
+                  >
                     Get in touch
                   </a>
                 </li>
@@ -85,7 +128,7 @@ export default function Footer() {
         </div>
 
         <small className="w-full text-center text-gray py-2 border-t border-gray">
-          &copy; 2024. Tomás Sorgetti
+          &copy; {new Date().getFullYear()}. Tomás Sorgetti
         </small>
       </div>
     </footer>
