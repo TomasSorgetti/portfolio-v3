@@ -82,25 +82,59 @@ export default function About() {
             </p>
           </div>
           <ul className="flex flex-col gap-2">
-            <li className="text-gray flex items-center gap-2 icon-hover">
-              <GmailIcon />
-              tomassorgetti456@gmail.com
+            <li>
+              <a
+                href="mailto:tomassorgetti456@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray flex items-center gap-2 icon-hover"
+              >
+                <GmailIcon />
+                tomassorgetti456@gmail.com
+              </a>
             </li>
-            <li className="text-gray flex items-center gap-2 icon-hover">
-              <WhatsappIcon />
-              (+54) 11 3632 3780
+            <li>
+              <a
+                href="https://wa.me/5491136323780"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray flex items-center gap-2 icon-hover"
+              >
+                <WhatsappIcon />
+                (+54) 9 11 3632 3780
+              </a>
             </li>
-            <li className="text-gray flex items-center gap-2 icon-hover">
-              <BehanceIcon />
-              Behance
+            <li>
+              <a
+                href="https://www.behance.net/tomassorgetti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray flex items-center gap-2 icon-hover"
+              >
+                <BehanceIcon />
+                Behance
+              </a>
             </li>
-            <li className="text-gray flex items-center gap-2 icon-hover">
-              <LinkedinIcon />
-              Linkedin
+            <li>
+              <a
+                href="https://www.linkedin.com/in/tomas-sorgetti/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray flex items-center gap-2 icon-hover"
+              >
+                <LinkedinIcon />
+                Linkedin
+              </a>
             </li>
-            <li className="text-gray flex items-center gap-2 icon-hover">
-              <GitHubIcon />
-              GitHub
+            <li>
+              <a
+                href="https://github.com/TomasSorgetti"
+                target="_blank"
+                className="text-gray flex items-center gap-2 icon-hover"
+              >
+                <GitHubIcon />
+                GitHub
+              </a>
             </li>
           </ul>
         </MainCard>
