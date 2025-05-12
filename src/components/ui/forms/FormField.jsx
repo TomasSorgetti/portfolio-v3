@@ -1,5 +1,3 @@
-import styles from "./FormField.module.css";
-
 export default function FormField({
   id,
   label,
@@ -14,11 +12,18 @@ export default function FormField({
   required = false,
 }) {
   return (
-    <div className={styles.formField}>
-      <label htmlFor={id}>{label}</label>
+    <div className="flex flex-col items-start gap-2 w-full relative mb-5">
+      <label
+        htmlFor={id}
+        className={`text-xl font-bold relative ${required && ""}`}
+      >
+        {label}
+      </label>
       {name === "message" ? (
         <textarea
-          className={`${styles.input} ${error ? styles.error : ""}`}
+          className={`h-52 resize-none w-full bg-white border border-[#acacac8c] rounded-[16px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] text-black text-[18px] font-medium p-4 ${
+            error ? "error" : ""
+          }`}
           name={name}
           value={value}
           placeholder={placeholder}
@@ -32,7 +37,9 @@ export default function FormField({
         />
       ) : (
         <input
-          className={`${styles.input} ${error ? styles.error : ""}`}
+          className={`h-20 w-full bg-white border border-[#acacac8c] rounded-[16px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] text-black text-[18px] font-medium p-4 ${
+            error ? "error" : ""
+          }`}
           type={type}
           name={name}
           value={value}
@@ -47,7 +54,11 @@ export default function FormField({
         />
       )}
       {error && (
-        <small className={styles.errorText} id={`${id}-error`} role="alert">
+        <small
+          className="text-red-500 absolute bottom-[-22px] left-2"
+          id={`${id}-error`}
+          role="alert"
+        >
           {error}
         </small>
       )}
