@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #171717;
-  --text: #ffffff;
+  --background: #ffffff;
+  --text: #000000;
   --pink: #e020f1;
   --cian: #30c2e2;
   --gray: #959595;
   --dark-gray: #222222;
   --black: #111111;
+  --white: #ffffff;
 
   scroll-behavior: smooth;
 }
